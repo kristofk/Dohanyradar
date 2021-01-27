@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ListView()
+        TabView {
+            ListView()
+                .tabItem {
+                    Image(systemName: "rectangle.grid.1x2.fill")
+                    Text("Boltok")
+                }
+        }
     }
 }
 

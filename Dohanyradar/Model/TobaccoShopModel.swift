@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TobaccoShopModel: Codable {
+struct TobaccoShopModel: Codable, Identifiable {
     let id: Int
     let name: String
     let address: String

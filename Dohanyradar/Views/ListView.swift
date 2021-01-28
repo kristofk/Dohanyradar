@@ -15,7 +15,7 @@ struct ListView: View {
         NavigationView {
             List(viewModel.shops) { shop in
                 NavigationLink(
-                    destination: DetailView(),
+                    destination: DetailView(id: shop.id),
                     label: {
                         Text(shop.name)
                     })

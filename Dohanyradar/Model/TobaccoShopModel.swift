@@ -14,4 +14,8 @@ struct TobaccoShopModel: Codable, Identifiable {
     let description: String
     let isOpen: Bool
     let openHours: [OpenHourModel]
+    
+    static func empty(id: Int) -> TobaccoShopModel {
+        return TobaccoShopModel(id: id, name: "", address: "", description: "", isOpen: true, openHours: [])
+    }
 }

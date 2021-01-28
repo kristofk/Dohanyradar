@@ -19,12 +19,13 @@ struct DetailView: View {
     }
     
     var body: some View {
-        
         List {
             AddressView(address: viewModel.details.address)
             OpenHoursView(openHours: viewModel.details.openHours)
             IsOpenView(model: viewModel.details)
+            Text(viewModel.details.description)
         }
+        .navigationTitle(viewModel.details.name)
     }
 }
 

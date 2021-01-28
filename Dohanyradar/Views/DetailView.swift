@@ -20,6 +20,7 @@ struct DetailView: View {
     
     var body: some View {
         List {
+            ImageView(shopId: viewModel.shopId)
             AddressView(address: viewModel.details.address)
             OpenHoursView(openHours: viewModel.details.openHours)
             IsOpenView(model: viewModel.details)

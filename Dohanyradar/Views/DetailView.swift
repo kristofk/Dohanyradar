@@ -15,18 +15,15 @@ struct DetailView: View {
     init(id: Int) {
         self.shopId = id
         self.viewModel = DetailViewModel(shopId: id)
+        print(viewModel.details)
     }
     
     var body: some View {
-        VStack {
+        
+        List {
             AddressView(address: viewModel.details.address)
-            Text("Nyitvatartás")
-            Text(viewModel.details.openHours[0].openTime)
-            Text(viewModel.details.openHours[0].prettyOpenTime ?? "XXX")
-            Spacer()
+            OpenHoursView(openHours: viewModel.details.openHours)
         }
-        .navigationBarTitle(viewModel.details.name)
-        .padding()
     }
 }
 

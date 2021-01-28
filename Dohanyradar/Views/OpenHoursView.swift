@@ -17,9 +17,12 @@ struct OpenHoursView: View {
             Spacer(minLength: 20)
             ForEach(openHours) { openHour in
                 HStack {
-                    Text(openHour.dayName)
-                    Spacer()
-                    Text("\(openHour.prettyOpenTime ?? "?") - \(openHour.prettyCloseTime ?? "?")")
+                    if let dayName = openHour.dayName {
+                        Text(dayName)
+                        Spacer()
+                        Text("\(openHour.prettyOpenTime ?? "?") - \(openHour.prettyCloseTime ?? "?")")
+                    }
+                    
                 }
             }
         }

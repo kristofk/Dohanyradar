@@ -28,4 +28,34 @@ extension Date {
         return formatter.string(from: adjustedDate)
     }
     
+    func indexOfTodayInWeek() -> Int? {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.timeZone = .current
+        formatter.dateFormat = "F"
+        
+        let date = Date()
+        let dayIndexString = formatter.string(from: date)
+        guard let dayIndex = Int(dayIndexString) else { return nil }
+        return dayIndex - 1
+    }
+    
+    func dayNameForIndexInWeek() -> String? {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.timeZone = .current
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
+    
+    static func dayNameForIndexInWeek(_ index: Int) -> String? {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.timeZone = .current
+        formatter.dateFormat = "F"
+        guard let date = formatter.date(from: "\(index)") else { return nil }
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: date)
+    }
+    
 }

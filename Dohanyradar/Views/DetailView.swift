@@ -23,6 +23,7 @@ struct DetailView: View {
         List {
             AddressView(address: viewModel.details.address)
             OpenHoursView(openHours: viewModel.details.openHours)
+            IsOpenView(model: viewModel.details)
         }
     }
 }

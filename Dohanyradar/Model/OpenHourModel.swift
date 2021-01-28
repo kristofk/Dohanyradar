@@ -21,7 +21,7 @@ struct OpenHourModel: Codable, Identifiable {
         return Date(fromISOString: closeTime)?.hmString()
     }
     
-    var dayName: String {
+    var dayName: String? {
         switch day {
         case 0: return "Hétfő"
         case 1: return "Kedd"
@@ -30,9 +30,8 @@ struct OpenHourModel: Codable, Identifiable {
         case 4: return "Péntek"
         case 5: return "Szombat"
         case 6: return "Vasárnap"
-        default: return ""
+        default: return nil
         }
-        
     }
     
 }

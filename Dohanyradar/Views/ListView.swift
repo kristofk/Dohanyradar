@@ -12,8 +12,15 @@ struct ListView: View {
     @ObservedObject var viewModel = ListViewModel()
     
     var body: some View {
-        List(viewModel.shops) { shop in
-            Text(shop.name)
+        NavigationView {
+            List(viewModel.shops) { shop in
+                NavigationLink(
+                    destination: DetailView(id: shop.id),
+                    label: {
+                        Text(shop.name)
+                    })
+        }
+                .navigationBarTitle("Boltok")
         }
     }
 }

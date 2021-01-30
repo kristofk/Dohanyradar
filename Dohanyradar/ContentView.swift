@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            ListView()
+                .tabItem {
+                    Image(systemName: "rectangle.grid.1x2.fill")
+                    Text("Boltok")
+                }
+            MapView()
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Térkép")
+                }
+        }
     }
 }
 

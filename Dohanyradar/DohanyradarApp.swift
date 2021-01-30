@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DohanyradarApp: App {
+    
+    let shops = Shops()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(shops)
         }
     }
 }

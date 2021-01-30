@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ListView: View {
     
-    @ObservedObject var viewModel = ListViewModel()
+    @EnvironmentObject var shops: Shops
     
     var body: some View {
         NavigationView {
-            List(viewModel.shops) { shop in
+            List(shops.shops) { shop in
                 NavigationLink(
                     destination: DetailView(id: shop.id),
                     label: {
                         Text(shop.name)
                     })
-        }
-                .navigationBarTitle("Boltok")
+            }
+            .navigationBarTitle("Boltok")
         }
     }
 }

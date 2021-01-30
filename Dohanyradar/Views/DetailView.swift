@@ -15,7 +15,6 @@ struct DetailView: View {
     init(id: Int) {
         self.shopId = id
         self.viewModel = DetailViewModel(shopId: id)
-        print(viewModel.details)
     }
     
     var body: some View {

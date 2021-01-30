@@ -21,12 +21,6 @@ struct MapView: View {
         center: CLLocationCoordinate2D(latitude: 47.497913, longitude: 19.040236),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
-    @State private var cities: [City] = [
-        City(coordinate: .init(latitude: 40.7128, longitude: 74.0060)),
-        City(coordinate: .init(latitude: 37.7749, longitude: 122.4194)),
-        City(coordinate: .init(latitude: 47.6062, longitude: 122.3321))
-    ]
-    
     var body: some View {
         NavigationView() {
             Map(coordinateRegion: $coordinateRegion, annotationItems: shops.shops) { shop in
@@ -42,7 +36,9 @@ struct MapView: View {
                     
                 }
             }
-            .navigationTitle("Térkép")
+            .navigationTitle("")
+            .navigationBarHidden(true)
+            .ignoresSafeArea()
         }
     }
 }

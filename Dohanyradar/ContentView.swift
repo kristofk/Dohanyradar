@@ -12,7 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            ListView()
+            NavigationView {
+                ListView()
+            }
                 .tabItem {
                     Image(systemName: "rectangle.grid.1x2.fill")
                     Text("Boltok")
